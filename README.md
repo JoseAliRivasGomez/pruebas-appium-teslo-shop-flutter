@@ -10,7 +10,7 @@
 
 5. Cuando se instala el JDK, deberá encontrar la ruta al directorio de inicio de JDK tal como se instaló en su sistema. Este será el directorio que contiene bin, include y otros directorios. La ruta debe persistir como una variable de entorno denominada JAVA_HOME, para que Appium pueda encontrar las herramientas de Java adecuadas que se requieren para trabajar con la plataforma Android.
 
-6. En la variable de entorno del sistema PATH agregar estas 3 rutas:
+6. En la variable de entorno del sistema PATH agregar estas 3 rutas: (cambiar el usuario)
     - C:\Users\Usuario\AppData\Local\Android\Sdk\tools
     - C:\Users\Usuario\AppData\Local\Android\Sdk\platform-tools
     - C:\Users\Usuario\AppData\Local\Android\Sdk\build-tools
@@ -33,13 +33,22 @@
 - appium driver install --source=npm appium-flutter-driver
 - appium
 
-# Crear el proyecto:
+# Crear un proyecto nuevo:
 
 - Crear carpeta del proyecto
 - npm init
 - npm i --save-dev webdriverio
 - npm i appium-flutter-finder
 - npm i assert
+
+# Utilizar este proyecto:
+
+- npm i
+
+# Configurar las pruebas:
+
+- adb devices (para obtener el ID del emulador)
+- Editar 'appium:deviceName' y 'appium:app' en config.js
 
 # Ejecutar las pruebas:
 
