@@ -2,16 +2,13 @@
   "name": "pruebas-appium",
   "version": "1.0.0",
   "description": "",
-  "main": "test/test1.js",
+  "main": "test1.js",
   "scripts": {
-    "start": "node test/test1.js",
-    "test": "mocha --timeout 600000"
+    "start": "node test1.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wdio/cli": "^8.13.13",
-    "mocha": "^10.2.0",
     "webdriverio": "^8.13.12"
   },
   "dependencies": {

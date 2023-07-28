@@ -40,8 +40,6 @@
 - npm i --save-dev webdriverio
 - npm i appium-flutter-finder
 - npm i assert
-- npm i mocha --save-dev
-- npm i @wdio/cli --save-dev
 
 # Utilizar este proyecto:
 
@@ -54,7 +52,6 @@
 
 # Ejecutar las pruebas:
 
-- npm test
-- npm test test/test1.js
-- npm test test/test2.js
-- npm test test/test3.js
+- node test1.js
+- node test2.js
+- node test3.js

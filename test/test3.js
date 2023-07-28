@@ -1,22 +1,27 @@
 const { remote } = require('webdriverio');
 const assert = require('assert');
 const { byValueKey, byType, byText } = require('appium-flutter-finder');
-const { wdOpts } = require('./config');
+const { wdOpts } = require('../config');
 
-async function runTest3() {
+describe('Pruebas de creacion de producto', () => {
+    let driver;
 
-  const driver = await remote(wdOpts);
-    
-    try {
-        
+    before(async () => {
+        driver = await remote(wdOpts);
         await driver.pause(1000);
+    });
 
+    after(async () => {
+        await driver.pause(5000);
+        await driver.deleteSession();
+    });
+
+    it('Debería iniciar sesión correctamente con un usuario administrador y crear un producto sin titulo', async () => {
         await driver.elementSendKeys(byValueKey('loginEmailField'), 'jimmy@gmail.com');
         await driver.pause(1000);
         await driver.elementSendKeys(byValueKey('loginPasswordField'), 'Abc12345');
         await driver.pause(1000);
         await driver.elementClick(byValueKey('loginButton'));
-
         await driver.pause(2000);
 
         await driver.elementClick(byValueKey('productsNewProductButton'));
@@ -30,7 +35,7 @@ async function runTest3() {
         await driver.elementSendKeys(byValueKey('productPriceField'), '20');
         await driver.pause(1000);
 
-        await driver.execute('flutter:scroll', byValueKey('productInformation'), {dx: 0, dy: -200, durationMilliseconds: 200, frequency: 30})
+        await driver.execute('flutter:scroll', byValueKey('productInformation'), {dx: 0, dy: -1000, durationMilliseconds: 1000, frequency: 60});
 
         await driver.elementClick(byText('XS'));
         await driver.pause(500);
@@ -44,7 +49,7 @@ async function runTest3() {
         await driver.elementClick(byText('kid'));
         await driver.pause(1000);
 
-        await driver.execute('flutter:scroll', byValueKey('productInformation'), {dx: 0, dy: -200, durationMilliseconds: 200, frequency: 30})
+        await driver.execute('flutter:scroll', byValueKey('productInformation'), {dx: 0, dy: -1000, durationMilliseconds: 1000, frequency: 60});
 
         await driver.elementSendKeys(byValueKey('productStockField'), '50');
         await driver.pause(100);
@@ -54,8 +59,7 @@ async function runTest3() {
         await driver.pause(1000);
 
         await driver.elementClick(byValueKey('productSaveButton'));
-
-        await driver.pause(2000);
+        await driver.pause(1000);
 
         const productsScreenTitle = byValueKey('productsScreenTitle');
 
@@ -67,13 +71,6 @@ async function runTest3() {
         }
 
         assert.strictEqual(titleFound, true);
+    });
+});
 
-    } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        await driver.pause(5000);
-        await driver.deleteSession();
-    }
-}
-
-runTest3();

@@ -2,15 +2,20 @@
   "name": "pruebas-appium",
   "version": "1.0.0",
   "description": "",
-  "main": "test1.js",
+  "main": "test/test1.js",
   "scripts": {
-    "start": "node test1.js"
+    "start": "node test/test1.js",
+    "test": "mocha --timeout 600000"
   },
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^8.13.13",
+    "mocha": "^10.2.0",
+    "webdriverio": "^8.13.12"
+  },
   "dependencies": {
     "appium-flutter-finder": "^0.1.0",
-    "assert": "^2.0.0",
-    "webdriverio": "^8.13.12"
+    "assert": "^2.0.0"
   }
 }
