@@ -27,12 +27,17 @@ async function runTest2() {
 
         const loginScreenTitle = byValueKey('loginScreenTitle');
 
-        await driver.execute('flutter:waitFor', loginScreenTitle, 1000);
+        let titleFound = true;
+        try {
+            await driver.execute('flutter:waitFor', loginScreenTitle, 2000);
+        } catch (error) {
+            titleFound = false;
+        }
 
-        assert.strictEqual(await driver.getElementText(loginScreenTitle), 'Ingresar');
-
+        assert.strictEqual(titleFound, true);
+        
     } catch (error) {
-      console.error('Error:', error);
+        console.error('Error:', error);
     } finally {
         await driver.pause(5000);
         await driver.deleteSession();

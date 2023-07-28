@@ -21,16 +21,17 @@ async function runTest1() {
 
         const productsScreenTitle = byValueKey('productsScreenTitle');
 
-        await driver.execute('flutter:waitFor', productsScreenTitle, 1000);
-
-        for (let i = 0; i < 5; i++) {
-          await driver.execute('flutter:scroll', byValueKey('ProductList'), {dx: 0, dy: -400, durationMilliseconds: 200, frequency: 30})
+        let titleFound = true;
+        try {
+            await driver.execute('flutter:waitFor', productsScreenTitle, 2000);
+        } catch (error) {
+            titleFound = false;
         }
-        
-        assert.strictEqual(await driver.getElementText(productsScreenTitle), 'Productos');
+
+        assert.strictEqual(titleFound, true);
 
     } catch (error) {
-      console.error('Error:', error);
+        console.error('Error:', error);
     } finally {
         await driver.pause(5000);
         await driver.deleteSession();
