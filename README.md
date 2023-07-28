@@ -2,7 +2,7 @@
 
 1. Descargar Android Studio
 
-2. Establezca una variable de entorno que apunte al directorio en el disco donde están instaladas las herramientas de Android. Por lo general, puede encontrar la ruta a este directorio en el administrador de SDK de Android Studio. Contendrá las herramientas de la plataforma y otros directorios. Necesitamos definir y persistir la variable de entorno como ANDROID_HOME (o, alternativamente, ANDROID_SDK_ROOT).
+2. Establezca una variable de entorno del sistema que apunte al directorio en el disco donde están instaladas las herramientas de Android. Por lo general, puede encontrar la ruta a este directorio en el administrador de SDK de Android Studio. Contendrá las herramientas de la plataforma y otros directorios. Necesitamos definir y persistir la variable de entorno como ANDROID_HOME (o, alternativamente, ANDROID_SDK_ROOT).
 
 3. Use el administrador de SDK de Android para descargar cualquier plataforma de Android que queramos automatizar (por ejemplo, nivel de API 33)
 
