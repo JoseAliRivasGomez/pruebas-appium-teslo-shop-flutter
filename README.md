@@ -8,7 +8,7 @@
 
 4. Instale Java JDK (para los niveles de API de Android más recientes, se requiere JDK 9; de lo contrario, se requiere JDK 8). Es más fácil usar los paquetes de OpenJDK.
 
-5. Cuando se instala el JDK, deberá encontrar la ruta al directorio de inicio de JDK tal como se instaló en su sistema. Este será el directorio que contiene bin, include y otros directorios. La ruta debe persistir como una variable de entorno denominada JAVA_HOME, para que Appium pueda encontrar las herramientas de Java adecuadas que se requieren para trabajar con la plataforma Android.
+5. Cuando se instala el JDK, deberá encontrar la ruta al directorio de inicio de JDK tal como se instaló en su sistema. Este será el directorio que contiene bin, include y otros directorios. La ruta debe persistir como una variable de entorno del sistema denominada JAVA_HOME, para que Appium pueda encontrar las herramientas de Java adecuadas que se requieren para trabajar con la plataforma Android.
 
 6. En la variable de entorno del sistema PATH agregar estas 3 rutas: (cambiar el usuario)
     - C:\Users\Usuario\AppData\Local\Android\Sdk\tools
